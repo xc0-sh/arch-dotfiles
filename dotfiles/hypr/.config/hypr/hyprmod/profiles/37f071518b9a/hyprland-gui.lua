@@ -2,21 +2,55 @@
 
 -- Settings
 hl.config({
+    decoration = {
+        dim_inactive = false,
+        rounding = 5,
+    },
+    dwindle = {
+        permanent_direction_override = true,
+        smart_split = true,
+    },
     general = {
         col = {
             active_border = {
-                colors = {"rgba(00ff00ff)", "rgba(00ff00ff)"},
+                colors = {"rgba(00ff00ff)"},
                 angle = 90,
             },
             inactive_border = "0x8e00ff00",
         },
+        extend_border_grab_area = 10,
         gaps_in = 5,
-        gaps_out = 15,
+        gaps_out = 10,
+        snap = {
+            border_overlap = true,
+            enabled = true,
+            respect_gaps = true,
+        },
+    },
+    gestures = {
+        workspace_swipe_touch = true,
+    },
+    input = {
+        natural_scroll = true,
+        touchpad = {
+            clickfinger_behavior = true,
+        },
     },
     misc = {
+        animate_manual_resizes = true,
+        animate_mouse_windowdragging = true,
         key_press_enables_dpms = true,
         mouse_move_enables_dpms = true,
+        vrr = 0,
     },
+})
+
+-- Animations
+hl.animation({
+    leaf = "borderangle",
+    enabled = true,
+    speed = 1.0,
+    bezier = "default",
 })
 
 -- Monitors
